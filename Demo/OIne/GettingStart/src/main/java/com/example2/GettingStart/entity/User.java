@@ -16,6 +16,7 @@ public class User extends AbstractEntity<Long>{
 	private Long id;
 	private String firstname;
 	private String lastname;
+	private String status;
 	
 	@Column(unique = true)
 	private String email;

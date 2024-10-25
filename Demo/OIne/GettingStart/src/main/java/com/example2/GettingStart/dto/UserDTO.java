@@ -1,6 +1,9 @@
 package com.example2.GettingStart.dto;
 
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -19,7 +22,8 @@ public class UserDTO {
 	private String firstname;
 	private String lastname;
 	private String Email;
-	
+	private String status;
+
 	public static UserDTO toUserDTO(User user)
 	{
 		if (user != null)
@@ -29,6 +33,8 @@ public class UserDTO {
 			ud.setFirstname(user.getFirstname());
 			ud.setLastname(user.getLastname());
 			ud.setEmail(user.getEmail());
+			ud.setStatus(user.getStatus());
+
 			return ud;
 		}
 		
@@ -44,7 +50,7 @@ public class UserDTO {
 		u.setFirstname(userdto.firstname);
 		u.setLastname(userdto.getLastname());
 		u.setEmail(userdto.getEmail());
-		
+		u.setStatus(userdto.getStatus());
 		return u;
 
 

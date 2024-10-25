@@ -7,7 +7,7 @@ import jakarta.persistence.Transient;
 import jakarta.persistence.*;
 import lombok.*;
 
-public abstract class AbstractEntity<id> implements Persistable<id>
+public abstract class AbstractEntity<id> extends BaseEntity implements Persistable<id>
 {
 	@Transient
 	private boolean isNew = true;

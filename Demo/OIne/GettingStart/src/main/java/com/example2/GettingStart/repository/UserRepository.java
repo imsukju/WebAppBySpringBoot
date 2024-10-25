@@ -19,10 +19,11 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Transactional
     long deleteByEmail(String email); // 이메일로 삭제 메서드 추가
     @Transactional
-    List<User> removeByemail(String email); // 이메일로 삭제 후 목록 리턴 메서드 추가
+    List<User> removeByEmail(String email); // 이메일로 삭제 후 목록 리턴 메서드 추가
 
-	Optional<User> findByemail(String email);
-	Optional<User> findByid(Long id);
+	Optional<User> findByEmail(String email);
+	
+	Optional<User> findById(Long id);
 	
 
 }

@@ -35,17 +35,17 @@ public class UserSerivce {
     public List<User> removeByEmail(String email)
     {
     	//toUserDTO
-    	List<User> users = userrepository.removeByemail(email);
+    	List<User> users = userrepository.removeByEmail(email);
     	
     	List<UserDTO> dtos = users.stream().
     			map(UserDTO::toUserDTO)
     			.collect(Collectors.toList());
-    	return userrepository.removeByemail(email);
+    	return userrepository.removeByEmail(email);
     } // 이메일로 삭제 후 목록 리턴 메서드 추가
 
 	public Optional<User> findByEmail(String email)
 	{
-		return userrepository.findByemail(email);
+		return userrepository.findByEmail(email);
 	}
 	public void createUser(UserDTO userDTO)
 	{
@@ -60,7 +60,7 @@ public class UserSerivce {
 	
 	public Optional<User> findByid(Long id)
 	{
-		return userrepository.findByid(id);
+		return userrepository.findById(id);
 	}
 	
 	public void updateuser(String firstname, String lastnmae)
